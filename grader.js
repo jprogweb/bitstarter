@@ -67,7 +67,7 @@ var descargarFichero = function (url) {
     rest.get(url).on('success', function (data, response) {
 	fs.writeFileSync("temp.html", data);
     });
-}
+};
 
 if(require.main == module) {
     program
@@ -84,7 +84,7 @@ if(require.main == module) {
     var checkJson = checkHtmlFile(fichero, program.checks);
     var outJson = JSON.stringify(checkJson, null, 4);
     console.log(outJson);
-    
+
 } else {
     exports.checkHtmlFile = checkHtmlFile;
 }
